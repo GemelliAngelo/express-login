@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
-const APP_HOST = "localhost";
-const APP_PORT = "3000";
+
+require("dotenv").config();
+
+const { APP_HOST, APP_PORT } = process.env;
 
 const router = require("./routes/router");
 
