@@ -5,10 +5,12 @@ const APP_PORT = "3000";
 
 const router = require("./routes/router");
 
+app.use(express.json());
+
 app.use("/login", router);
 
 app.get("/", (req, res) => {
-  res.send(`<h1>APP CONNESSA</h1>`);
+  res.send(`APP CONNESSA`);
 });
 
 // # SERVER LISTENING
