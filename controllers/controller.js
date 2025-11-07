@@ -4,7 +4,7 @@ function index(req, res) {
   res.send(users.map((user) => user.email));
 }
 
-function create(req, res) {
+function create(req, res, next) {
   if (
     users.find(
       (user) =>
@@ -16,9 +16,7 @@ function create(req, res) {
     });
   }
 
-  return res.status(400).json({
-    status: "Bad Request",
-  });
+  next();
 }
 
 module.exports = { index, create };

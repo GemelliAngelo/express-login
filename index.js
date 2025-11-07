@@ -15,6 +15,12 @@ app.get("/", (req, res) => {
   res.send(`APP CONNESSA`);
 });
 
+const notFound = require("./middlewares/notFound");
+const errorsHandler = require("./middlewares/errorsHandler");
+
+app.use(notFound);
+app.use(errorsHandler);
+
 // # SERVER LISTENING
 app.listen(APP_PORT, () => {
   console.log(`App listening at ${APP_HOST}:${APP_PORT}`);

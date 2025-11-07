@@ -1,5 +1,6 @@
 const users = [
   {
+    id: 1,
     firstName: "Angelo",
     lastName: "Gemelli",
     email: "angelo.gemelli@bitspa.it",
@@ -7,6 +8,7 @@ const users = [
   },
 
   {
+    id: 2,
     firstName: "Jacopo",
     lastName: "Angelini",
     email: "jacopo.angelini@bitspa.it",
