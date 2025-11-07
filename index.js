@@ -1,13 +1,21 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 
 require("dotenv").config();
 
-const { APP_HOST, APP_PORT } = process.env;
+const { APP_HOST, APP_PORT, APP_FRONTEND_URL } = process.env;
+
+const corsOptions = {
+  origin: APP_FRONTEND_URL,
+  optionSuccessStatus: 200,
+};
 
 const router = require("./routes/router");
 
 app.use(express.json());
+
+app.use(cors(corsOptions));
 
 app.use("/", router);
 
