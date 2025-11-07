@@ -9,11 +9,7 @@ const router = require("./routes/router");
 
 app.use(express.json());
 
-app.use("/login", router);
-
-app.get("/", (req, res) => {
-  res.send(`APP CONNESSA`);
-});
+app.use("/", router);
 
 const notFound = require("./middlewares/notFound");
 const errorsHandler = require("./middlewares/errorsHandler");
